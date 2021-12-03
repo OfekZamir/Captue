@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 //Styled Components
 export const About = styled.div`
@@ -8,6 +9,7 @@ export const About = styled.div`
   justify-content: space-between;
   padding: 5rem 10rem;
   color: white;
+  z-index: 2;
 `;
 
 export const Description = styled.div`
@@ -16,9 +18,10 @@ export const Description = styled.div`
   h2 {
     font-weight: lighter;
   }
+  z-index: 2;
 `;
 
-export const Image = styled.div`
+export const Image = styled(motion.div)`
   flex: 1;
   overflow: hidden;
   img {
@@ -26,6 +29,8 @@ export const Image = styled.div`
     height: 80vh;
     object-fit: cover;
   }
+  z-index: 2;
+  overflow: hidden;
 `;
 
 export const Hide = styled.div`

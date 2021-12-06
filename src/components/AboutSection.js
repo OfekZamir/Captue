@@ -5,11 +5,13 @@ import Wave from "./Wave";
 //Animation
 import { motion } from "framer-motion";
 import { titleAnim, container, Img } from "../animation";
+import { Link } from "react-router-dom";
 
 export const AboutSection = () => {
   return (
     <About>
       <Description>
+        <Wave />
         <motion.div>
           <Hide>
             <motion.h2 variants={titleAnim}>We work to make</motion.h2>
@@ -27,13 +29,14 @@ export const AboutSection = () => {
           Contact us for any photograpyh or videography ideas that you have. We
           have professsionals with amazing skills.
         </motion.p>
-        <motion.button variants={container}>Contact Us</motion.button>
+        <motion.button variants={container}>
+          <Link to="/contact">Contact Us</Link>
+        </motion.button>
       </Description>
 
       <Image>
         <motion.img variants={Img} src={home1} alt="guy with a camera" />
       </Image>
-      <Wave />
     </About>
   );
 };

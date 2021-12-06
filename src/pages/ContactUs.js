@@ -39,7 +39,12 @@ const ContactUs = () => {
 const ContactStyled = styled(motion.div)`
   padding: 5rem 10rem;
   color: #353535;
-  min-height: 90vh;
+  min-height: 89vh;
+  @media (max-width: 1300px) {
+    padding: 2rem;
+    font-size: 1rem;
+  }
+  text-align: center;
 `;
 
 const Title = styled.div`
@@ -61,6 +66,15 @@ const Social = styled(motion.div)`
   h2 {
     margin: 3rem;
     font-size: 3rem;
+  }
+  @media (max-width: 1300px) {
+    justify-content: center;
+    align-items: center;
+    h2 {
+      margin: 2rem;
+      font-size: 2.5rem;
+      font-weight: 400;
+    }
   }
 `;
 export default ContactUs;

@@ -16,6 +16,7 @@ import {
   lineAnim,
 } from "../animation";
 import useScroll from "../components/useScroll";
+import ScrollTop from "../components/ScrollTop";
 
 const OurWork = () => {
   const [element, controls] = useScroll();
@@ -28,6 +29,7 @@ const OurWork = () => {
       exit="exit"
       style={{ background: "#fff" }}
     >
+      <ScrollTop />
       <motion.div variants={sliderContainer}>
         <Frame1 variants={slider}></Frame1>
         <Frame2 variants={slider}></Frame2>
@@ -78,6 +80,9 @@ const Work = styled(motion.div)`
   h2 {
     padding: 1rem 0rem;
     font-weight: 500;
+  }
+  @media (max-width: 1300px) {
+    padding: 2rem 2rem;
   }
 `;
 

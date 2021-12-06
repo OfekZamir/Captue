@@ -7,6 +7,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
 }
+html{
+    @media (max-width: 1500px){
+        font-size: 75%;
+    }
+}
 body{
     font-family: 'Inter', sans-serif;
     background: #1b1b1b;
@@ -31,26 +36,27 @@ h2{
         font-weight: lighter;
         font-size: 4rem;
     }
-    h3{
+h3{
         color: white;
     }
-    h4{
+h4{
         font-weight: bold;
         font-size: 2rem;
     }
-    a{
+a{
         font-size: 1.1rem;
     }
-    span{
+span{
         font-weight: bold;
         color:#23d997;
     }
-    p{
-        padding: 3rem 0rem;
+p{
+       
         color: #ccc;
         font-size: 1.4rem;
         line-height: 150%;
     }
+
 `;
 
 export default GlobalStyle;

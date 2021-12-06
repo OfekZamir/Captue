@@ -12,13 +12,13 @@ export const Nav = () => {
       </h1>
       <ul>
         <li>
-          <Link to="/">1. About Us</Link>
+          <Link to="/">About Us</Link>
         </li>
         <li>
-          <Link to="/work">2. Our Work</Link>
+          <Link to="/work">Our Work</Link>
         </li>
         <li>
-          <Link to="/contact">3. Contact Us</Link>
+          <Link to="/contact">Contact Us</Link>
         </li>
       </ul>
     </StyledNav>
@@ -27,6 +27,7 @@ export const Nav = () => {
 
 const StyledNav = styled.nav`
   min-height: 10vh;
+  width: 100vw;
   display: flex;
   margin: auto;
   justify-content: space-between;
@@ -52,5 +53,22 @@ const StyledNav = styled.nav`
   li {
     padding-left: 10rem;
     position: relative;
+  }
+  @media (max-width: 1300px) {
+    flex-direction: column;
+    padding: 1rem 1rem;
+
+    #Logo {
+      display: inline-block;
+      margin: 1rem;
+    }
+    ul {
+      padding: 1rem 0rem 0rem 0rem;
+      justify-content: space-around;
+      width: 100%;
+      li {
+        padding: 0;
+      }
+    }
   }
 `;

@@ -38,12 +38,10 @@ export const aboutPageAnim = {
     },
   },
 };
-
 export const titleAnim = {
-  hidden: { opacity: 0, y: -100 },
-  show: { opacity: 1, y: 0, transition: { duration: 1 } },
+  hidden: { opacity: 0, y: -20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
-
 export const fade = {
   hidden: {
     opacity: 0,
@@ -53,6 +51,16 @@ export const fade = {
     },
   },
   show: { opacity: 1, transition: { duration: 1 } },
+};
+export const fadeOut = {
+  hidden: {
+    opacity: 1,
+    transition: {
+      ease: "easeOut",
+      duration: 0.75,
+    },
+  },
+  show: { opacity: 0, transition: { duration: 1 } },
 };
 export const container = {
   hidden: { opacity: 0 },
@@ -85,7 +93,7 @@ export const lineAnim = {
   },
 };
 export const slider = {
-  hidden: { x: "-130%", skew: "45deg" },
+  hidden: { x: "-200%", skew: "45deg" },
   show: {
     x: "100%",
     skew: "0deg",

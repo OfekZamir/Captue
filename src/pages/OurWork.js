@@ -12,6 +12,7 @@ import {
   slider,
   pageAnimation,
   fade,
+  fadeOut,
   Img,
   lineAnim,
 } from "../animation";
@@ -29,8 +30,8 @@ const OurWork = () => {
       exit="exit"
       style={{ background: "#fff" }}
     >
-      <ScrollTop />
       <motion.div variants={sliderContainer}>
+        <Frame0 variants={fadeOut}></Frame0>
         <Frame1 variants={slider}></Frame1>
         <Frame2 variants={slider}></Frame2>
         <Frame3 variants={slider}></Frame3>
@@ -50,7 +51,7 @@ const OurWork = () => {
           </Hide>
         </Link>
       </Movie>
-      <Movie variants={fade} animate={controls} initial="hidden" ref={element}>
+      <Movie variants={fade}>
         <h2>The Racer</h2>
         <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-racer">
@@ -69,6 +70,7 @@ const OurWork = () => {
           <img src={goodtimes} draggable="false" alt="goodtimes"></img>
         </Link>
       </Movie>
+      <ScrollTop />
     </Work>
   );
 };
@@ -105,6 +107,16 @@ const Hide = styled.div`
 `;
 
 //Frame Animation
+const Frame0 = styled(motion.div)`
+  position: fixed;
+  left: 0;
+  top: 10%;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 1;
+`;
+
 const Frame1 = styled(motion.div)`
   position: fixed;
   left: 0;

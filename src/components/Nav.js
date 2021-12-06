@@ -27,7 +27,7 @@ export const Nav = () => {
 
 const StyledNav = styled.nav`
   min-height: 10vh;
-  width: 100vw;
+  width: 99vw;
   display: flex;
   margin: auto;
   justify-content: space-between;

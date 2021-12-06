@@ -73,12 +73,14 @@ const HeadLine = styled.div`
 `;
 
 const Awards = styled.div`
-  min-height: 80vh;
+  min-height: 70vh;
   display: flex;
-  flex-direction: column;
   margin: 5rem 10rem;
   align-items: center;
   justify-content: space-around;
+  @media (max-width: 1300px) {
+    flex-direction: column;
+  }
 `;
 
 const AwardStyle = styled.div`

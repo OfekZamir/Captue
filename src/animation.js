@@ -55,12 +55,8 @@ export const fade = {
 export const fadeOut = {
   hidden: {
     opacity: 1,
-    transition: {
-      ease: "easeOut",
-      duration: 0.75,
-    },
   },
-  show: { opacity: 0, transition: { duration: 1 } },
+  show: { opacity: 0, transition: { duration: 1.8 } },
 };
 export const container = {
   hidden: { opacity: 0 },

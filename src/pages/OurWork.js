@@ -13,10 +13,13 @@ import {
   pageAnimation,
   fade,
   Img,
-  linAnim,
+  lineAnim,
 } from "../animation";
+import useScroll from "../components/useScroll";
 
 const OurWork = () => {
+  const [element, controls] = useScroll();
+  const [element2, controls2] = useScroll();
   return (
     <Work
       variants={pageAnimation}
@@ -33,28 +36,37 @@ const OurWork = () => {
       </motion.div>
       <Movie>
         <motion.h2 variants={fade}>The Athlete</motion.h2>
-        <motion.div variants={linAnim} className="line"></motion.div>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-athlete">
           <Hide>
-            <motion.img variants={Img} src={athlete} alt="athlete"></motion.img>
+            <motion.img
+              variants={Img}
+              src={athlete}
+              draggable="false"
+              alt="athlete"
+            ></motion.img>
           </Hide>
         </Link>
       </Movie>
-      <Movie>
+      <Movie variants={fade} animate={controls} initial="hidden" ref={element}>
         <h2>The Racer</h2>
-        <div className="line"></div>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-racer">
-          <img src={theracer} alt="theracer"></img>
+          <img src={theracer} draggable="false" alt="theracer"></img>
         </Link>
       </Movie>
-      <Movie>
+      <Movie
+        variants={fade}
+        animate={controls2}
+        initial="hidden"
+        ref={element2}
+      >
         <h2>Good Times</h2>
-        <div className="line"></div>
+        <motion.div variants={lineAnim} className="line"></motion.div>{" "}
         <Link to="/work/good-times">
-          <img src={goodtimes} alt="goodtimes"></img>
+          <img src={goodtimes} draggable="false" alt="goodtimes"></img>
         </Link>
       </Movie>
-      <h1>OurWork</h1>
     </Work>
   );
 };
@@ -69,7 +81,7 @@ const Work = styled(motion.div)`
   }
 `;
 
-const Movie = styled.div`
+const Movie = styled(motion.div)`
   padding-bottom: 10rem;
   .line {
     height: 0.5rem;
@@ -89,7 +101,7 @@ const Hide = styled.div`
 
 //Frame Animation
 const Frame1 = styled(motion.div)`
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 10%;
   width: 100%;

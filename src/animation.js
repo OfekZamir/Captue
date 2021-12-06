@@ -35,7 +35,6 @@ export const fade = {
   },
   show: { opacity: 1, transition: { duration: 1 } },
 };
-
 export const container = {
   hidden: { opacity: 0 },
   show: {
@@ -57,7 +56,7 @@ export const Img = {
     },
   },
 };
-export const linAnim = {
+export const lineAnim = {
   hidden: {
     width: "0%",
   },
@@ -78,5 +77,14 @@ export const sliderContainer = {
   hidden: {
     opacity: 1,
   },
-  show: { opacity: 1, transition: { staggerChildren: 0.15, ease: "easeOut" } },
+  show: {
+    opacity: 1,
+    display: "none",
+    transition: {
+      staggerChildren: 0.15,
+      ease: "easeOut",
+
+      when: "afterChildren",
+    },
+  },
 };

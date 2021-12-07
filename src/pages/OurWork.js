@@ -42,21 +42,47 @@ const OurWork = () => {
         <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-athlete">
           <Hide>
-            <motion.img
-              variants={Img}
-              src={athlete}
-              draggable="false"
-              alt="athlete"
-            ></motion.img>
+            <motion.div
+              style={{
+                width: "100%",
+                height: "100%",
+              }}
+              whileHover={{
+                scale: 1.05,
+                opacity: 0.9,
+                transition: { duration: 0.2, ease: "easeIn" },
+              }}
+            >
+              <motion.img
+                variants={Img}
+                src={athlete}
+                draggable="false"
+                alt="athlete"
+              ></motion.img>
+            </motion.div>
           </Hide>
         </Link>
       </Movie>
       <Movie variants={fade}>
         <h2>The Racer</h2>
         <motion.div variants={lineAnim} className="line"></motion.div>
-        <Link to="/work/the-racer">
-          <img src={theracer} draggable="false" alt="theracer"></img>
-        </Link>
+        <motion.div>
+          <motion.div
+            style={{
+              width: "100%",
+              height: "100%",
+            }}
+            whileHover={{
+              scale: 1.05,
+              opacity: 0.9,
+              transition: { duration: 0.2, ease: "easeIn" },
+            }}
+          >
+            <Link to="/work/the-racer">
+              <img src={theracer} draggable="false" alt="theracer"></img>
+            </Link>
+          </motion.div>
+        </motion.div>
       </Movie>
       <Movie
         variants={fade}
@@ -66,9 +92,21 @@ const OurWork = () => {
       >
         <h2>Good Times</h2>
         <motion.div variants={lineAnim} className="line"></motion.div>{" "}
-        <Link to="/work/good-times">
-          <img src={goodtimes} draggable="false" alt="goodtimes"></img>
-        </Link>
+        <motion.div
+          style={{
+            width: "100%",
+            height: "100%",
+          }}
+          whileHover={{
+            scale: 1.05,
+            opacity: 0.9,
+            transition: { duration: 0.2, ease: "easeIn" },
+          }}
+        >
+          <Link to="/work/good-times">
+            <img src={goodtimes} draggable="false" alt="goodtimes"></img>
+          </Link>
+        </motion.div>
       </Movie>
       <ScrollTop />
     </Work>
@@ -93,12 +131,12 @@ const Movie = styled(motion.div)`
   .line {
     height: 0.5rem;
     background-color: #23d997;
-    margin-bottom: 3rem;
   }
   img {
     width: 100%;
     height: 70%;
     object-fit: cover;
+    padding: 3rem;
   }
 `;
 

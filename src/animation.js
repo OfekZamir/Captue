@@ -77,6 +77,7 @@ export const Img = {
       ease: "easeOut",
       duration: 0.75,
     },
+    whileHover: { scale: 1.2, transition: { duration: 1 } },
   },
 };
 export const lineAnim = {
